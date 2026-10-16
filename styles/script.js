@@ -21,7 +21,21 @@ const genNewPass = () => {
 const changeText = () => {
    password.textContent = genNewPass(); 
 };
+// handle copy logic
+copyButton.addEventListener('click', async (e) => {
+    const text = password.textContent;
+    if (!text) return;
 
+    try {
+        await navigator.clipboard.writeText(text);
+        copyButton.classList.add('copied');
+        setTimeout(() => {
+            copyButton.classList.remove('copied');
+        }, 400)
+    } catch (error) {
+        console.log('Failed to copy password' ,error);
+    }
+})
 
 // combines more handler functions with one event
 revButton.addEventListener('click', changeText)

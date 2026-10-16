@@ -65,7 +65,7 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 .rev-btn {
     background-color: #000;
@@ -78,9 +78,19 @@ span {
 .copy-btn svg {
     color: #fff;
 }
+
+
+.copy-btn.copied svg {
+    color: rgb(45, 83, 93);
+}
+.copy-btn.copied  {
+    background-color: #fff;
+}
+
+
 .rev-btn:hover,
 .copy-btn:hover {
-    transform: scale(1.01);
+    transform: scale(1.03);
 }
 .rev-btn i {
     font-size: 1.4rem;
